@@ -2,6 +2,17 @@
   "name": "tiptopp",
   "packageManager": "yarn@4.0.2",
   "workspaces": [
+    "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "start:dev": "yarn workspace universal run start"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.16"
+  },
+  "resolutions": {
+    "metro": "0.76.0",
+    "metro-resolver": "0.76.0"
+  }
 }
