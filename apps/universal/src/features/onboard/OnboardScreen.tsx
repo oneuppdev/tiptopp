@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, Pressable, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, Pressable, Text } from 'react-native';
 import Animated, {
-  withSpring,
   useAnimatedScrollHandler,
   useAnimatedStyle,
   useSharedValue,

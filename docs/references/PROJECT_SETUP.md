@@ -1,5 +1,5 @@
 ```shell
-yarn create expo-app --template expo-template-blank
+yarn create expo-app --template expo-template-blank-typescript
 ```
 
 ```shell
