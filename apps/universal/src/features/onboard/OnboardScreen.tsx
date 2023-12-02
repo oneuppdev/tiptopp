@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Pressable, Text } from 'react-native';
+import { useRouter } from 'expo-router';
 import Animated, {
   useAnimatedScrollHandler,
   useAnimatedStyle,
@@ -13,22 +14,32 @@ import { onboardingData } from '@shared/data';
 
 const OnboardScreen = (): JSX.Element => {
   const scrollViewRef = React.useRef<Animated.ScrollView | null>(null);
-  const x = useSharedValue<number>(0);
+  const xScrollOffset = useSharedValue<number>(0);
+  const router = useRouter();
 
   const scrollAnimation = useAnimatedStyle(() => ({
-    transform: [{ translateX: x.value * -1 }],
+    transform: [{ translateX: xScrollOffset.value * -1 }],
   }));
 
   const scrollHandler = useAnimatedScrollHandler({
     onScroll: (event) => {
-      x.value = event.contentOffset.x;
+      xScrollOffset.value = event.contentOffset.x;
     },
   });
 
+  const loginHandler = React.useCallback(() => {
+    router.replace('/login');
+  }, []);
+
   return (
     <View style={[styles.container]}>
-      <View style={[styles.skipcontainer]}>
-        <Text>Skip</Text>
+      <View className="absolute top-[54] left-0 right-0 justify-center items-end px-4 z-10">
+        <Pressable
+          className="bg-blue-500 py-2 px-4 rounded"
+          onPress={loginHandler}
+        >
+          <Text className="text-white">Skip</Text>
+        </Pressable>
       </View>
       <View style={[styles.scrollViewContainer]}>
         <Animated.ScrollView
@@ -64,7 +75,7 @@ const OnboardScreen = (): JSX.Element => {
             <Indicator
               key={`${title}_${index}`}
               index={index}
-              scrollOffset={x}
+              scrollOffset={xScrollOffset}
             />
           ))}
         </View>
@@ -75,7 +86,7 @@ const OnboardScreen = (): JSX.Element => {
                 style={[styles.pressable]}
                 onPress={() => {
                   if (index === onboardingData.length - 1) {
-                    console.log('last item');
+                    router.replace('/login');
                   } else {
                     scrollViewRef.current?.scrollTo({
                       x: WIDTH * (index + 1),

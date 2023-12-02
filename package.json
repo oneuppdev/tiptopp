@@ -1,12 +1,13 @@
 {
-  "name": "tiptopp",
+  "name": "@oneuppdev/tiptopp",
   "packageManager": "yarn@4.0.2",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "start:dev": "yarn workspace universal run start"
+    "start:dev": "yarn build && yarn workspace universal run start",
+    "build": "turbo run build"
   },
   "devDependencies": {
     "turbo": "^1.10.16"

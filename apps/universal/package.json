@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@oneuppdev/lifaite-ui": "workspace:^",
     "@shopify/flash-list": "1.4.3",
     "expo": "~49.0.15",
     "expo-constants": "~14.4.2",
