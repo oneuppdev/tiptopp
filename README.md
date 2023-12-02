@@ -12,7 +12,7 @@ Introducing a revolutionary platform that seamlessly connects individuals with t
 
 ```shell
 # This project uses node v18.18.2
-# If you already have that version installed locally using nvm, then use within the project directory
+# If you already have that version installed locally using nvm, then run the following within the project directory
 nvm use
 # Alternatively, you can install it by running within the project directory
 nvm install
