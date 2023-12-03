@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "allowJs": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
@@ -21,6 +22,15 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
-    "verbatimModuleSyntax": true
-  }
+    "verbatimModuleSyntax": true,
+    "rootDir": "src"
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    "app.d.ts",
+    "bob.config.js",
+    "babel.config.js",
+    "tailwind.config.js"
+  ]
 }

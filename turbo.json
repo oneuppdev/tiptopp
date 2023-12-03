@@ -5,6 +5,11 @@
       "dependsOn": [],
       "cache": true,
       "outputs": ["dist"]
+    },
+    "clean": {
+      "dependsOn": [],
+      "cache": false,
+      "outputs": []
     }
   }
 }

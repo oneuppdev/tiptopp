@@ -13,18 +13,9 @@
   ],
   "scripts": {
     "test": "jest",
-    "clean": "del-cli dist",
-    "build": "yarn prepare",
+    "clean": "del-cli dist node_modules",
+    "build": "del-cli dist && yarn prepare",
     "prepare": "bob build"
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "dist",
-    "targets": [
-      "commonjs",
-      "module",
-      "typescript"
-    ]
   },
   "engines": {
     "node": ">= 18.0.0"

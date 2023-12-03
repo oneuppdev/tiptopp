@@ -7,8 +7,8 @@ const Button = ({
   children,
 }: React.PropsWithChildren<ButtonProps>): JSX.Element => {
   return (
-    <View className="p-4 bg-slate-900">
-      <Text className="text-red-700">{children}</Text>
+    <View className="items-center justify-center rounded bg-blue-400 p-2">
+      <Text className="text-white">{children}</Text>
     </View>
   );
 };
