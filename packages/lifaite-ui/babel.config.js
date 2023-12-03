@@ -1,6 +1,4 @@
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  plugins: [
-    ['nativewind/babel', { tailwindConfig: './src/tailwind.config.ts' }],
-  ],
+  presets: ['module:metro-react-native-babel-preset', 'nativewind/babel'],
+  // plugins: [['nativewind/babel', { tailwindConfig: './tailwind.config.js' }]],
 };

@@ -11,15 +11,20 @@ const LoginScreen = (): JSX.Element => {
   }, []);
 
   return (
-    <View className="flex-1 justify-center items-center gap-4">
-      <Text className="text-purple-500 pb-2">Login Screen</Text>
-      <Pressable
-        className="bg-blue-500 py-2 px-4 rounded"
-        onPress={authHandler}
-      >
-        <Text className="text-white">Authticate User</Text>
-      </Pressable>
-      <Button>Design System Button</Button>
+    <View className="flex-1 items-center justify-center gap-8">
+      <View className="gap-4 bg-slate-400 p-6">
+        <Text>Button from the application</Text>
+        <Pressable
+          className="items-center justify-center rounded bg-blue-500 px-4 py-2"
+          onPress={authHandler}
+        >
+          <Text className="text-white">Login</Text>
+        </Pressable>
+      </View>
+      <View className="gap-4 bg-slate-500 p-6">
+        <Text>Button from the Design System</Text>
+        <Button>Logout</Button>
+      </View>
     </View>
   );
 };

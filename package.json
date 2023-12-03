@@ -1,15 +1,25 @@
 {
   "name": "@oneuppdev/tiptopp",
   "packageManager": "yarn@4.0.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/expo-router",
+      "**/expo-router/**"
+    ]
+  },
   "scripts": {
     "start:dev": "yarn build && yarn workspace universal run start",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "clean": "turbo run clean && del-cli node_modules .turbo"
   },
   "devDependencies": {
+    "del-cli": "^5.1.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
     "turbo": "^1.10.16"
   },
   "resolutions": {
